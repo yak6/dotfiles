@@ -6,7 +6,7 @@
 " (_)_/ |_|_| |_| |_|_|  \___|
       
 " Hello, this is yak6's .vimrc configuration file.
-" Visit my github profile at https://github.com/yak6
+" https://github.com/yak6/dotfiles
 
 " Install vim-plug:
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
