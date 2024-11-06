@@ -1,9 +1,21 @@
 # yak6's dotfiles
 My GNU/Linux dotfiles
 
-# neofetch
-![obraz](https://github.com/user-attachments/assets/e0c68846-95f3-4c40-b1fd-bfdf0d404231)
-# .bashrc
-![obraz](https://github.com/user-attachments/assets/fc323759-41fe-413d-ad0b-9d0dfe1301d3)
-# .vimrc
-![obraz](https://github.com/user-attachments/assets/bb22ed48-39bd-4e42-ac25-29e58a02f88f)
+# vimrc
+
+![obraz](https://github.com/user-attachments/assets/1a31dd09-97e2-49e0-9867-5bce8eb55d2f)
+### Install plugins
+Install vim-plug to manage plugins in vim:
+
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+In vim, type:
+
+```
+:PlugInstall
+```
+
+This will install all the plugins from .vimrc
