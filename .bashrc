@@ -4,11 +4,12 @@
 #   | '_ \ / _` / __| '_ \| '__/ __|
 #  _| |_) | (_| \__ \ | | | | | (__ 
 # (_)_.__/ \__,_|___/_| |_|_|  \___|
-                                   
-# Hello, this is yak'6 .bashrc configuration file                                    
+                                                                       
 # https://github.com/yak6/dotfiles
 
 [[ $- != *i* ]] && return
+
+PS1="\e[1;31m\e[0;91m[\e[0;93m\u\e[0;92m@\e[0;96m\h \e[0;35m\W\e[0;91m]\e[0m$ "
 
 # Aliases - listing, 
 alias ls='ls --color=auto'
@@ -24,7 +25,7 @@ alias cp='cp -i'
 alias mkdir='mkdir -pv'
 
 # custom, 
-alias neo='clear; neofetch'
+alias neofetch='clear; neofetch'
 alias wifis='nmcli device wifi list'  
 alias shutdown='shutdown now' 
 alias suspend='systemctl suspend' 
@@ -41,5 +42,3 @@ alias ....='cd ../../..'
 alias sv='sudo -E vim'
 alias sn='sudo nano'
 alias fucking='sudo'
-
-PS1='[\u@\h \W]$ '
