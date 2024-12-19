@@ -2,8 +2,6 @@
 
 PS1="[\u@\h \W]$ "
 
-echo -ne '\e[5 q' # load '|' cursor shape  
-
 # aliases
 
 alias ls='ls --color=auto --group-directories-first'
@@ -31,3 +29,4 @@ alias ....='cd ../../..'
 
 alias t='date +"%T"'
 alias d='date +"%Y-%m-%d"'
+alias i="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
