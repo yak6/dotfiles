@@ -1,0 +1,39 @@
+[font]
+size = 11
+
+[font.bold]
+family = "IosevkaNerdFont"
+style = "Bold"
+
+[font.italic]
+family = "IosevkaNerdFont"
+style = "Italic"
+
+[font.normal]
+family = "IosevkaNerdFont"
+style = "Regular"
+
+
+[colors.primary]
+background = "#000000"
+foreground = "#FFFFFF"
+
+[colors.normal]
+black   = "#282C34"
+red     = "#E06C75"
+green   = "#98C379"
+yellow  = "#E5C07B"
+blue    = "#61AFEF"
+magenta = "#C678DD"
+cyan    = "#56B6C2"
+white   = "#ABB2BF"
+
+[colors.bright]
+black   = "#5C6370"
+red     = "#BE5046"
+green   = "#98C379"
+yellow  = "#D19A66"
+blue    = "#61AFEF"
+magenta = "#C678DD"
+cyan    = "#56B6C2"
+white   = "#FFFFFF"
