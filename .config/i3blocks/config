@@ -1,0 +1,39 @@
+# Global properties
+separator=true
+separator_block_width=15
+
+[kernel]
+label=   
+command=uname -r 
+interval=15
+
+[mem]
+label=    
+command=free -h | awk '/^Mem/ {print $3 "/" $2}'
+interval=5
+
+[ip]
+label=󰲐   
+command=ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'
+interval=5
+
+[volume]
+label=󰕾   
+command=pamixer --get-volume-human
+signal=10
+interval=once
+
+[disk]
+label=󰨣   
+command=df -h --output=used,size / | tail -n 1 | awk '{print $1 "/" $2}'
+interval=1
+
+[date]
+label=   
+command=date '+%d-%m-%Y'
+interval=1
+
+[time]
+label=󱑃  
+command=date '+%H:%M:%S'
+interval=1
