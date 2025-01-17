@@ -4,6 +4,7 @@ My configuration files for programs I regularly use.
 In this repository you can find:
 - Configuration files for:
   - bash (shell)
+  - zsh (shell)
   - alacritty (terminal)
   - vim/neovim (text editor)
   - tmux (terminal multiplexer)
