@@ -22,8 +22,7 @@ bindkey "^[[1;5A" beginning-of-line   # Ctrl + Up
 bindkey "^[[1;5B" end-of-line         # Ctrl + Down
 
 # Text deleting
-bindkey "^[[3~" delete-char # Delete
-bindkey "^[[3;5~" kill-line # Ctrl + Delete
+bindkey "^[[P" delete-char # Delete
 
 # Aliases
 alias grep='grep --color'
