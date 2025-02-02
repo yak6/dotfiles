@@ -1,7 +1,7 @@
 # yak6's zsh config
 
 autoload -U colors && colors	
-PS1="$ "
+PS1="[%n@%m %1~]%# "
 setopt autocd	
 stty stop undef		
 setopt interactive_comments
@@ -20,8 +20,8 @@ setopt extended_history       # Add time
 
 
 # Underline - \e[3 q
-# Beam - \e[1 q
-# Block - \e[5 q
+# Beam - \e[5 q
+# Block - \e[1 q
 
 SHAPE='\e[1 q' # Cursor shape variable
 
