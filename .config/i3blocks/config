@@ -1,0 +1,29 @@
+# Global properties
+separator=true
+separator_block_width=15
+
+[kernel]
+label=ver:
+command=uname -r
+interval=15
+
+[mem]
+label=mem:
+command=free -h | awk '/^Mem/ {print $3 "/" $2}'
+interval=5
+
+[volume]
+label=volume:
+command=pamixer --get-volume-human
+signal=10
+interval=once
+
+[battery]
+label=battery:
+command=upower -i $(upower -e | grep battery) | grep -E "percentage" | awk '{print $2}'
+interval=1
+
+[date]
+label=date:
+command=date '+%d-%m-%Y %H:%M:%S'
+interval=1
