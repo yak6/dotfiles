@@ -9,3 +9,4 @@
 - Configuration files for:
   - zsh (shell)
   - vim (text editor)
+  - i3wm (window manager)
