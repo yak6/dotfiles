@@ -1,28 +1,13 @@
 " https://github.com/yak6/dotfiles
 
-" Plugins
+" Plugins 
 call plug#begin()
 
 Plug 'tpope/vim-sensible'
 Plug 'jiangmiao/auto-pairs'
-Plug 'sheerun/vim-polyglot'
-Plug 'dense-analysis/ale'
-
+Plug 'sheerun/vim-polyglot'   
+    
 call plug#end()
-
-let g:ale_enabled = 1
-let g:ale_fix_on_save = 0
-let g:ale_lint_on_text_changed = 'always'
-let g:ale_lint_on_enter = 1
-let g:ale_pattern_options = {'\v\.(md|txt|json)$': {'ale_enabled': 0}}
-
-let g:ale_linters = {
-            \   'python': ['flake8', 'pylint'],
-            \   'javascript': ['eslint'],
-            \   'go': ['golangci-lint'],
-            \   'c': ['gcc'],
-            \   'cpp': ['clang'],
-            \}
 
 " Moving selected text up/down (Shift + J/K)
 vnoremap <S-J> :m '>+1<CR>gv=gv
@@ -41,13 +26,12 @@ syntax enable
 set number
 set relativenumber
 set cursorline
-set title
 
 " Status bar
-set statusline=[\%F\]\%m\ [%{&fileencoding}\]\ [%{&fileformat}\]\ [\%p%%\]\
+set statusline=[\%F\]\%m\ [%{&fileencoding}\]\ [%{&fileformat}\]\ [\%p%%\]\ [%{getcwd()}] 
 set laststatus=2
 
-" Tab settings
+" Tab settings 
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -55,8 +39,8 @@ set autoindent
 set smartindent
 
 " Apperance
-hi LineNr ctermfg=236
-hi StatusLine ctermfg=white ctermbg=232 cterm=bold gui=bold
+hi LineNr ctermfg=244 cterm=bold
+hi StatusLine ctermfg=white ctermbg=232 cterm=NONE gui=NONE 
 hi CursorLineNr gui=bold cterm=bold ctermfg=white
 hi CursorLine cterm=NONE gui=NONE
 
@@ -77,7 +61,6 @@ set wrap
 set linebreak
 set formatoptions+=t
 autocmd FileType make setlocal noexpandtab
-set fillchars=eob:\
 
 " Cursor
 " With this option, when running in terminal emulator your cursor will change depending on current editing mode.
