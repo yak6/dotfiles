@@ -1,5 +1,6 @@
 # github.com/yak6/dotfiles
 
+autoload -U compinit && compinit
 autoload -Uz colors && colors
 PS1='%F{red}[%F{yellow}%n%f@%F{blue}%m%F %F{yellow}%1~%F{red}]%f$ '
 setopt autocd
@@ -9,6 +10,7 @@ setopt interactive_comments
 # Exports
 [[ -d "$HOME/.local/bin" ]] && export PATH="$HOME/.local/bin:$PATH"
 [[ -d "/opt/homebrew/bin" ]] && export PATH="/opt/homebrew/bin:$PATH"
+[[ -d "/usr/local/bin" ]] && export PATH="/usr/local/bin:$PATH"
 export EDITOR="vim"
 export VISUAL="vim"
 
@@ -28,12 +30,6 @@ setopt extended_history       # Add time
 
 echo -ne '\e[5 q' # Use cursor shape after shell starts
 preexec() { echo -ne '\e[5 q';} # Use cursor shape for each new prompt
-
-# The key combinations may be different in your case. Run 'cat' and use your key combination, after receiving the output, put the combinations under the appropriate shell actions
-bindkey '^[[3;3~' kill-word # delete word after cursor
-bindkey '^H' backward-kill-word # delete word before cursor
-bindkey '^[[1;3D' backward-word # move to backward word
-bindkey '^[[1;3C' forward-word  # move to forward word
 
 # Colorize commands
 alias \
