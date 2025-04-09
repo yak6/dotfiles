@@ -8,19 +8,21 @@ bindsym $mod+F7 exec pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pkill -SIGRT
 
 # Screenshot
 
-bindsym $mod+F6 exec maim "/home/$USER/_screenshots/$(date '+%H-%M-%S_%d-%m-%Y').png"
-bindsym $mod+Shift+F6 exec maim --select "/home/$USER/_screenshots/$(date '+%H-%M-%S_%d-%m-%Y').png"
+bindsym $mod+Shift+F3 exec maim "$HOME/Screenshots/$(date '+%H-%M-%S_%d-%m-%Y').png"
+bindsym $mod+Shift+F4 exec maim --select "$HOME/Screenshots/$(date '+%H-%M-%S_%d-%m-%Y').png"
 
 # Apps binds
-bindsym $mod+shift+Return exec alacritty
+bindsym $mod+q exec alacritty
 bindsym $mod+Shift+c kill
-bindsym $mod+p exec rofi -show drun
+bindsym $mod+space exec rofi -show drun
 
 # Window settings
 for_window [class="^.*"] border pixel 1
-bindsym $mod+space floating toggle
+bindsym $mod+a floating toggle
 floating_modifier $mod
-bindsym $mod+Shift+f fullscreen toggle
+bindsym $mod+f fullscreen toggle
+gaps inner 10
+gaps outer 10
 
 # Move
 bindsym $mod+Shift+Left move left
@@ -41,32 +43,50 @@ bindsym Mod1+Up focus up
 bindsym Mod1+Right focus right
 
 # Workspaces
-bindsym $mod+1 workspace "1"
-bindsym $mod+2 workspace "2"
-bindsym $mod+3 workspace "3"
-bindsym $mod+4 workspace "4"
-bindsym $mod+5 workspace "5"
-bindsym $mod+6 workspace "6"
-bindsym $mod+7 workspace "7"
-bindsym $mod+8 workspace "8"
-bindsym $mod+9 workspace "9"
-bindsym $mod+0 workspace "10"
+bindsym $mod+1 workspace " 1 "
+bindsym $mod+2 workspace " 2 "
+bindsym $mod+3 workspace " 3 "
+bindsym $mod+4 workspace " 4 "
+bindsym $mod+5 workspace " 5 "
+bindsym $mod+6 workspace " 6 "
+bindsym $mod+7 workspace " 7 "
+bindsym $mod+8 workspace " 8 "
+bindsym $mod+9 workspace " 9 "
 
 # Move windows through workspaces
-bindsym $mod+Shift+1 move window to workspace 1
-bindsym $mod+Shift+2 move window to workspace 2
-bindsym $mod+Shift+3 move window to workspace 3
-bindsym $mod+Shift+4 move window to workspace 4
-bindsym $mod+Shift+5 move window to workspace 5
-bindsym $mod+Shift+6 move window to workspace 6
-bindsym $mod+Shift+7 move window to workspace 7
-bindsym $mod+Shift+8 move window to workspace 8
-bindsym $mod+Shift+9 move window to workspace 9
-bindsym $mod+Shift+0 move window to workspace 10
+bindsym $mod+Shift+1 move window to workspace " 1 "
+bindsym $mod+Shift+2 move window to workspace " 2 "
+bindsym $mod+Shift+3 move window to workspace " 3 "
+bindsym $mod+Shift+4 move window to workspace " 4 "
+bindsym $mod+Shift+5 move window to workspace " 5 "
+bindsym $mod+Shift+6 move window to workspace " 6 "
+bindsym $mod+Shift+7 move window to workspace " 7 "
+bindsym $mod+Shift+8 move window to workspace " 8 "
+bindsym $mod+Shift+9 move window to workspace " 9 "
+
+# class                 border  bground text    indicator child_border
+client.focused          #005999 #005999 #FFFFFF #2E9EF4   #005897
+client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+client.background       #FFFFFF
 
 bar {
-    position bottom
+    colors {
+        background #000000
+        statusline #FFFFFF
+        separator  #666666
+
+        focused_workspace  #005999 #005999 #FFFFFF
+        active_workspace   #333333 #222222 #FFFFFF
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2F343A #900000 #FFFFFF
+        binding_mode       #2F343A #900000 #FFFFFF
+    }
+    position top
     status_command i3blocks
-    font pango:Monospace 17
-    height 50
+    font pango:Monospace 18
+    height 40
 }
