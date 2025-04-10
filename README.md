@@ -10,12 +10,14 @@
   - zsh (shell)
   - vim (text editor)
   - i3wm (window manager)
+  - firefox
+  - alacritty
 
 ## Scripts
 
 If you plan to use scripts from `.local/bin`, make them executables files by running on each script:
 ```bash
-chmod +x <script>
+chmod +x ~/.local/bin/$(ls -1 --color=none)
 ```
 
 Also don't forget to export this directory to `$PATH` in your shell rc:
