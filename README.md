@@ -15,7 +15,7 @@
 
 ## Scripts
 
-If you plan to use scripts from `.local/bin`, make them executables files by running on each script:
+If you plan to use scripts from `.local/bin`, make them executables files by running this command:
 ```bash
 chmod +x ~/.local/bin/$(ls -1 --color=none)
 ```
@@ -24,4 +24,3 @@ Also don't forget to export this directory to `$PATH` in your shell rc:
 ```bash
 export PATH="$HOME/.local/bin:$PATH"
 ```
-If you have <b>[my zshrc](https://github.com/yak6/dotfiles/blob/main/.zshrc)</b>, you don't need to do it.
