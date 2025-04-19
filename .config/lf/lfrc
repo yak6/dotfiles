@@ -1,0 +1,35 @@
+# lf settings
+set previewer '~/.config/lf/preview'
+set dircounts
+set icons
+set info size
+
+# Functions
+cmd mkdir ${{
+    dir=$(printf "" | fzf --print-query --prompt="New dir name: ")
+        [ -n "$dir" ] && mkdir -p -- "$dir"
+}}
+
+cmd delete ${{
+    confirm="n"
+    printf "Delete %s? [y/N]: " "$f"
+    read confirm
+    [ "$confirm" = "y" ] && rm -rf -- "$f"
+}}
+cmd rename ${{
+    new=$(printf "%s" "$f" | sed 's/.*\///' | fzf --print-query --prompt="Rename: " | head -n1)
+    [ -n "$new" ] && mv -- "$f" "$(dirname "$f")/$new"
+}}
+
+# Bindings
+map . set hidden!
+map ~ cd ~
+map v $vim $f
+map M :mkdir
+map D :delete
+map R :rename
+map r :reload
+map y $echo $f | xclip -selection clipboard # Xorg
+map Y $cat $f | xclip -selection clipboard # Xorg
+#map y $echo $f | pbcopy # MacOS
+#map Y $cat $f | pbcopy # MacOS
