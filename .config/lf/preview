@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Get the mime type
+filetype=$(file --mime-type -Lb "$1")
+
+case "$filetype" in
+  text/*)
+    bat --style=plain --color=always "$1"
+    ;;
+  *)
+    file "$1"
+    ;;
+esac
