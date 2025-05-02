@@ -1,4 +1,4 @@
-" https://github.com/yak6/dotfiles
+" vim settings
 
 " Plugins 
 call plug#begin()
@@ -8,6 +8,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'   
     
 call plug#end()
+" Key bindings
 
 " Moving selected text up/down (Shift + J/K)
 vnoremap <S-J> :m '>+1<CR>gv=gv
@@ -28,7 +29,7 @@ set relativenumber
 set cursorline
 
 " Status bar
-set statusline=[\%F\]\%m\ [%{&fileencoding}\]\ [%{&fileformat}\]\ [\%p%%\]\ [%{getcwd()}] 
+set statusline=[\%F\]\%m\ [%{&fileencoding}\]\ [%{&fileformat}\]\ %=\ [%l/%L\]\ 
 set laststatus=2
 
 " Tab settings 
@@ -39,10 +40,13 @@ set autoindent
 set smartindent
 
 " Apperance
+set t_Co=256
+hi Normal ctermbg=232 guibg=#000000
 hi LineNr ctermfg=244 cterm=bold
-hi StatusLine ctermfg=white ctermbg=232 cterm=NONE gui=NONE 
+hi StatusLine ctermfg=white ctermbg=235 cterm=NONE gui=NONE 
 hi CursorLineNr gui=bold cterm=bold ctermfg=white
 hi CursorLine cterm=NONE gui=NONE
+hi EndOfBuffer ctermfg=lightgrey guifg=#999999
 
 " Editing
 set nobackup
@@ -63,8 +67,7 @@ set formatoptions+=t
 autocmd FileType make setlocal noexpandtab
 
 " Cursor
-" With this option, when running in terminal emulator your cursor will change depending on current editing mode.
-
+" With this option, when running in terminal emulator your cursor will change depending on current editing mode
 if has('gui_running') || &term =~ 'xterm'
     let &t_SI = "\e[6 q"   " Insert mode - beam cursor '▏'
     let &t_SR = "\e[4 q"   " Replace mode – underline cursor '▁'
