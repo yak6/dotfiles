@@ -11,6 +11,9 @@ CURSOR_SHAPE="underline"
 # Prompt and cursor map
 typeset -A PROMPT_MAP 
 typeset -A CURSOR_MAP
+# Load colors
+autoload -U compinit && compinit
+autoload -Uz colors && colors
 
 # Cursor shapes
 CURSOR_MAP[block]='\e[1 q' 
@@ -52,8 +55,6 @@ preexec() { set_cursor_shape } # Set cursor shape before executing any command
 setopt autocd
 setopt interactive_comments
 stty stop undef
-autoload -U compinit && compinit
-autoload -Uz colors && colors
 
 ###########
 # Plugins #
