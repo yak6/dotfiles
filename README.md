@@ -8,10 +8,15 @@
   - zsh (shell)
   - vim (text editor)
   - i3wm (window manager)
-  - firefox (userChrome.css)
-  - alacritty (terminal emulator)
   - lf (terminal file manager)
-  
+
+## Zsh config
+
+All main settings, aliases, functions, and plugins are kept modular in separate *.zsh files inside the .zsh/ directory.
+
+In the .zshrc file, you can change prompt and cursor shape very easily. Check **[prompt.zsh](.zsh/prompt.zsh)**, there's a map where you can add your own prompts or check existing ones.
+You can also choose cursor shape between beam, underline and block.
+
 ## Shell scripts
 
 If you plan to use scripts from `.local/bin`, make them executables files by running this command:
