@@ -1,4 +1,4 @@
-# yak6's zsh config
+# zsh config
 #
 # All main settings, aliases, functions, and plugins
 # are kept modular in separate *.zsh files
