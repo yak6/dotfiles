@@ -1,4 +1,4 @@
-# yak6's dotfiles
+# Fibonashshi's dotfiles
 
 <h4>
   In this repository you can find configuration files for programs i regularly use on Unix like operating systems.
