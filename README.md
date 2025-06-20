@@ -10,7 +10,8 @@
   - vim (text editor)
   - i3wm (window manager)
   - lf (terminal file manager)
-
+  - tmux (terminal multiplexer)
+    
 ## Zsh config
 
 All main settings, aliases, functions, and plugins are kept modular in separate *.zsh files inside the .zsh/ directory.
