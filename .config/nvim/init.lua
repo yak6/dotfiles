@@ -5,16 +5,44 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' 
   use 'tpope/vim-sensible'
   use 'folke/tokyonight.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" } 
   use 'jiangmiao/auto-pairs'
   use 'sheerun/vim-polyglot'
+  use 'nvim-tree/nvim-web-devicons'
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup()
+  end}
   use {
     'nvim-tree/nvim-tree.lua',
-  config = function()
-    require("nvim-tree").setup()
-  end
-}
+    config = function()
+      require("nvim-tree").setup()
+  end}
+
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require'nvim-treesitter.configs'.setup {
+        ensure_installed = { "c", "lua", "bash", "python", "cpp" },
+        highlight = { enable = true },
+        indent = { enable = true }
+      }
+    end
+  }
 end)
 
+
+-- Toggle term setup
+require("toggleterm").setup{
+  size = 20,
+  open_mapping = [[<c-\>]],
+  direction = 'float', -- 'horizontal' | 'vertical' | 'tab' | 'float'
+  float_opts = {
+    border = 'curved',
+    winblend = 0,
+  },
+}
 -- Nvim tree setup
 require("nvim-tree").setup {
   view = {
@@ -62,20 +90,21 @@ map("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true }) -- C
 -- Basic options 
 option.syntax = 'a'
 option.number = true
-option.relativenumber = true
+option.relativenumber = false
 option.cursorline = true
-option.laststatus = 2
+option.laststatus = 3
 
 -- Status line
+vim.opt.laststatus = 2 -- global statusline
+
 option.statusline = table.concat({
   "%#StatusLine#",
   "%f",                 -- file name
   "%m",                 -- modify symbol
-  " | %{&fileformat}",  -- unix/dos/mac
-  " | %{&fileencoding}",-- file encoding
+  " [%{&fileformat}]",  -- unix/dos/mac
   "%=",                 -- separator
-  "%l:%c",              -- linia:kolumna
-  " %y"                 -- file type
+  "%l:%c",
+  " %{&fileencoding}"
 })
 
 -- Tabulations 
@@ -87,12 +116,7 @@ option.smartindent = true
 
 -- Appearance 
 option.termguicolors = true
-vim.g.tokyonight_style = "storm"
-vim.g.tokyonight_terminal_colors = true
-vim.g.tokyonight_transparent = false
-vim.g.tokyonight_enable_italic = true
-vim.g.tokyonight_sidebars = { "qf", "help" }
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd.colorscheme "catppuccin-frappe"
 
 -- Editing 
 option.backup = false
