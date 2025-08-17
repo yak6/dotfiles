@@ -1,13 +1,5 @@
-" vim settings
+" Minimal vim settings
 
-" Plugins 
-call plug#begin()
-
-Plug 'tpope/vim-sensible'
-Plug 'jiangmiao/auto-pairs'
-Plug 'sheerun/vim-polyglot'   
-    
-call plug#end()
 " Key bindings
 
 " Moving selected text up/down (Shift + J/K)
@@ -17,19 +9,15 @@ vnoremap <S-K> :m '<-2<CR>gv=gv
 vnoremap <S-H> <gv
 vnoremap <S-L> >gv
 
-" Delete word before cursor (Ctrl + W)
-nnoremap <C-w> db
-" Delete word after cursor (Ctrl + Q)
-nnoremap <C-q> daw
-
 " Basic
 syntax enable
 set number
 set relativenumber
 set cursorline
+colorscheme evening 
 
-" Status bar
-set statusline=[\%F\]\%m\ [%{&fileencoding}\]\ [%{&fileformat}\]\ %=\ [%l/%L\]\ 
+" Full status line in a single assignment
+set statusline=%F\ %m\ [%{&fileencoding}]\ [%{&fileformat}]\ %=%l:%c/%L
 set laststatus=2
 
 " Tab settings 
@@ -38,15 +26,6 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set smartindent
-
-" Apperance
-set t_Co=256
-hi Normal ctermbg=232 guibg=#000000
-hi LineNr ctermfg=244 cterm=bold
-hi StatusLine ctermfg=white ctermbg=235 cterm=NONE gui=NONE 
-hi CursorLineNr gui=bold cterm=bold ctermfg=white
-hi CursorLine cterm=NONE gui=NONE
-hi EndOfBuffer ctermfg=lightgrey guifg=#999999
 
 " Editing
 set nobackup
