@@ -6,9 +6,7 @@
 
 - Configuration files for:
   - zsh 
-  - neovim 
   - vim 
-  - i3wm 
   - lf 
   - tmux 
   - hyprland and waybar
