@@ -1,0 +1,134 @@
+@define-color bg      #0b0b0b;
+@define-color surface #141414;
+@define-color line    #2a2a2a;
+@define-color dim     #5c5c5c;
+@define-color fg      #d0d0d0;
+@define-color accent  #f2f2f2;
+@define-color crit    #e05a4f;
+
+* {
+    font-family: "Spleen 32x64", monospace;
+    font-size: 20px;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+window#waybar {
+    background: @bg;
+    color: @fg;
+    border: 2px solid @line;
+}
+
+tooltip {
+    background: @bg;
+    border: 2px solid @accent;
+}
+
+tooltip label {
+    color: @fg;
+    padding: 4px 6px;
+}
+
+#workspaces,
+#window,
+#clock,
+#cpu,
+#memory,
+#custom-memory,
+#pulseaudio,
+#battery,
+#tray {
+    padding: 0 12px;
+    color: @fg;
+}
+
+#cpu,
+#memory,
+#custom-memory,
+#pulseaudio,
+#battery,
+#tray {
+    border-left: 1px solid @line;
+}
+
+#workspaces {
+    padding: 0 4px;
+    border-right: 1px solid @line;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    margin: 4px 1px;
+    color: @dim;
+    background: transparent;
+    transition: all 150ms ease-out;
+}
+
+#workspaces button:hover {
+    background: @surface;
+    color: @fg;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+#workspaces button.empty {
+    color: #333333;
+}
+
+#workspaces button.visible {
+    color: @fg;
+}
+
+#workspaces button.active {
+    background: @fg;
+    color: @bg;
+}
+
+#workspaces button.urgent {
+    background: @crit;
+    color: @bg;
+}
+
+#window {
+    color: @fg;
+}
+
+window#waybar.empty #window {
+    background: transparent;
+}
+
+#clock {
+    border-left: 1px solid @line;
+    padding: 0 16px;
+}
+
+#pulseaudio.muted {
+    color: @dim;
+}
+
+#battery.charging,
+#battery.plugged,
+#battery.full {
+    color: @fg;
+    border-bottom: 2px solid @accent;
+}
+
+#battery.warning:not(.charging) {
+    color: @accent;
+}
+
+#battery.critical:not(.charging) {
+    background: @crit;
+    color: @bg;
+    animation: blink 1s steps(2) infinite;
+}
+
+@keyframes blink {
+    to { background: @bg; color: @crit; }
+}
+
+#tray > .needs-attention {
+    background: @crit;
+}
