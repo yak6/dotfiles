@@ -5,7 +5,7 @@
 </h4>
 
 - Configuration files for:
-  - zsh 
+  - oksh
   - vim 
   - lf 
   - tmux 
