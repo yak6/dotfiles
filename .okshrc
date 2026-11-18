@@ -1,0 +1,39 @@
+case "$KSH_VERSION" in
+  *"PD KSH"*) ;;
+  *) return 0 2>/dev/null || exit 0 ;;
+esac
+
+# cursors
+BLOCK_C=$(printf '\033[2 q')
+BEAM_C=$(printf '\033[6 q')
+UNDERLINE_C=$(printf '\033[4 q')
+
+# ps1 
+PS1='\['"$BLOCK_C"'\]\[\033[1;97m\]\u@\h:\w\$ \[\033[0m\]'
+
+# shell settings
+export EDITOR=vim
+set -o emacs 
+set -o csh-history
+
+# history settings
+HISTFILE=$HOME/.oksh_history
+HISTSIZE=5000
+HISTCONTROL=ignoredups
+
+# aliases
+alias ls='ls --color'
+alias ip='ip --color'
+alias grep='grep --color'
+alias diff='diff --color'rep='grep --color'
+
+alias l='ls -CF'
+alias ll='ls -lh'
+alias la='ls -a'
+
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -Iv'
+alias mkdir='mkdir -pv'
+
+alias reload='. $HOME/.okshrc'
